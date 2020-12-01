@@ -32,10 +32,12 @@ const errorHandler = error => {
 
 // DEFINI UN PORT
 const port = validatePort(process.env.PORT || '3000');
-app.set('port', port);
+//app.set('port', port);
 
+// ON DEFINI QUE NOTRE SERVEUR RENVOIE VERS 'app'
 const server = http.createServer(app);
 
+// ON CONTROLE LE SERVEUR
 server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
@@ -43,4 +45,5 @@ server.on('listening', () => {
   console.log('Ecoute ' + bind);
 });
 
+// ON ECOUTE LES REQUETES AVEC LE PORT
 server.listen(port);

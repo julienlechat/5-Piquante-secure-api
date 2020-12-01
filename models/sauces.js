@@ -2,17 +2,17 @@ const { ObjectID } = require('mongodb')
 const mongoose = require('mongoose')
 
 const saucesSchema = mongoose.Schema({
-    userId: {type: ObjectID, required: true},
+    userId: {type: String, required: true},
     name: {type: String, required: true},
     manufacturer: {type: String, required: true},
     description: {type: String, required: true},
     mainPepper: {type: String, required: true},
     imageUrl: {type: String, required: true},
-    heat: {type: Number},
+    heat: {type: Number, required: true},
     likes: {type: Number},
     dislikes: {type: Number},
-    usersLiked: {type: String},
-    usersDisliked: {type: String}
+    usersLiked: {type: [String]},
+    usersDisliked: {type: [String]}
 })
 
-module.exports = mongoose.models('Sauces', saucesSchema)
+module.exports = mongoose.model('sauces', saucesSchema)
