@@ -1,19 +1,32 @@
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken')
+const pwdValidator = require("password-validator")
 const Users = require('../models/users')
 
+// Exigence du mot de passe
+let pwd = new pwdValidator();
+pwd
+.is().min(8) // minimum 8 caractères
+.is().max(25) // maximum 25 caractères
+.has().uppercase() // une majuscule
+.has().lowercase() // une minuscule
+.has().not().spaces() // pas d'espaces
+.has().digits() // un chiffre
+
 exports.signup = (req, res, next) => {
-    bcrypt.hash(req.body.password, 10)
-      .then(hash => {
-        const user = new Users({
-          email: req.body.email,
-          password: hash
-        })
-        user.save()
-          .then(() => res.status(201).json({ message: 'Register: Utilisateur créé !' }))
-          .catch(error => res.status(400).json({ error }));
-      })
-      .catch(error => res.status(500).json({ error }));
+    if (!pwd.validate(req.body.password)) {
+        return res.status(400).json({error: "Votre mot de passe n'est pas assez compléxe !"})
+    } else {
+        bcrypt.hash(req.body.password, 10)
+        .then(hash => {
+            const user = new Users({email: req.body.email, password: hash})
+            
+            user.save()
+                .then(() => res.status(201).json({ message: 'Register: Utilisateur créé !' }))
+                .catch(error => res.status(400).json({ error }));
+            })
+        .catch(error => res.status(500).json({ error }));
+    }
   };
 
 exports.login = (req, res, next) => {
