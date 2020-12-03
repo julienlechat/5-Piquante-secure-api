@@ -6,9 +6,10 @@ const helmet = require('helmet');
 const app = express();
 
 // BASE DE DONNEE
-mongoose.connect('mongodb://localhost:27017/piquante',
+mongoose.connect('mongodb+srv://Admin1:Azerty123@cluster0.efamn.mongodb.net/piquante?retryWrites=true&w=majority',
   { useNewUrlParser: true,
-    useUnifiedTopology: true})
+    useUnifiedTopology: true,
+    useCreateIndex: true})
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'))
 
