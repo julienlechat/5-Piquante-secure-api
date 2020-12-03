@@ -59,9 +59,19 @@ exports.editSauce = (req, res, next) => {
 
 // SUPPRIME UNE SAUCE
 exports.deleteSauce = (req, res, next) => {
-    Sauce.deleteOne({_id: req.params.id})
-    .then(() => res.status(200).json({message: 'Objet supprimé !'}))
-    .catch(error => res.status(400).json({error}))
+    const sauceId = {_id: req.params.id}
+    const DelSauce = () => {
+        Sauce.deleteOne(sauceId)
+            .then(() => res.status(200).json({message: 'Objet supprimé !'}))
+            .catch(error => res.status(400).json({error}))
+    }
+
+    Sauce.findOne(sauceId)
+        .then(img => {
+            const filename = img.imageUrl.split('/images/')[1]
+            fs.unlink(`images/${filename}`, () => {DelSauce()})
+        })
+        .catch(error => res.status(500).json({error}))
 }
 
 // GERE LES AJOUT/SUPR DE LIKE/DISLIKE
