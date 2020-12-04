@@ -32,7 +32,6 @@ const errorHandler = error => {
 
 // DEFINI UN PORT
 const port = validatePort(process.env.PORT || '3000');
-//app.set('port', port);
 
 // ON DEFINI QUE NOTRE SERVEUR RENVOIE VERS 'app'
 const server = http.createServer(app);

@@ -50,6 +50,7 @@ exports.editSauce = (req, res, next) => {
     if(req.file) {
         Sauce.findOne(sauceId)
             .then(img => {
+                if(!img) return res.status(401).json({error: 'Sauce introuvable!'})
                 const filename = img.imageUrl.split('/images/')[1]
                 fs.unlink(`images/${filename}`, () => {updateSauce()})
             })
@@ -68,6 +69,7 @@ exports.deleteSauce = (req, res, next) => {
 
     Sauce.findOne(sauceId)
         .then(img => {
+            if(!img) return res.status(401).json({error: 'Sauce introuvable!'})
             const filename = img.imageUrl.split('/images/')[1]
             fs.unlink(`images/${filename}`, () => {DelSauce()})
         })
@@ -99,6 +101,7 @@ exports.likeSauce = (req, res, next) => {
 
     Sauce.findOne(sauceId)
         .then(sauce => {
+            if(!sauce) return res.status(401).json({error: 'Sauce introuvable!'})
             if (sauce.usersLiked.find((user) => user === req.body.userId)) return applyLike(1)
             if (sauce.usersDisliked.find((user) => user === req.body.userId)) return applyLike(2)
             return applyLike(0)
