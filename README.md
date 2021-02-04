@@ -6,14 +6,14 @@ It's a website where users share « sauces ».
 ## Screenshots
 
 <div align="center">
-    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/add.png?raw=true" height="300px"</img>
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/add.png?raw=true" height="280px"</img>
     <img height="0" width="8px">
-    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/home.png?raw=true" height="300px"</img>
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/home.png?raw=true" height="280px"</img>
 </div><br />
 <div align="center">
-  <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/login.png?raw=true" height="300px"</img>
+  <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/login.png?raw=true" height="280px"</img>
   <img height="0" width="8px">
-    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/sauce.png?raw=true" height="300px"</img>
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/sauce.png?raw=true" height="280px"</img>
 </div>
 
 
