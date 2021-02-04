@@ -3,6 +3,19 @@
 This repository is a backend server.
 It's a website where users share « sauces ».
 
+## Screenshots
+
+<div align="center">
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/add.png?raw=true" height="310px"</img>
+    <img height="0" width="8px">
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/home.png?raw=true" height="310px"</img>
+</div><br />
+<div align="center">
+  <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/login.png?raw=true" height="310px"</img>
+  <img height="0" width="8px">
+    <img src="https://github.com/julienlechat/piquante-secure-api/blob/main/screenshots/sauce.png?raw=true" height="310px"</img>
+</div>
+
 
 ## Requirements
 
@@ -10,7 +23,7 @@ It's a website where users share « sauces ».
 
 - [Front-end](https://github.com/OpenClassrooms-Student-Center/dwj-projet6)
 
-- MongoDB ( download or use mongoDB Atlas )
+- MongoDB (Download or use mongoDB Atlas)
 
 
 ## Install
