@@ -10,6 +10,8 @@ It's a website where users share « sauces ».
 
 - [Front-end](https://github.com/OpenClassrooms-Student-Center/dwj-projet6)
 
+- MongoDB ( download or use mongoDB Atlas )
+
 
 ## Install
 
