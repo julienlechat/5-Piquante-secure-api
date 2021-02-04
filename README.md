@@ -38,12 +38,19 @@ cd piquante-secure-api
 npm install
 ```
 
+# Configure database
+
+Edit the app.js file on line 9
+
+```Shell
+mongoose.connect('<ADDRESS_MONGODB_HERE>',
+```
+
 ## Run
 
 to run back-end server, execute :
 
 ```Shell
-cd piquante-secure-api
 node server.js
 ```
 
